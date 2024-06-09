@@ -21,7 +21,6 @@ This is a blank project for CDK deployment for [RS - AWS Clould Developer](https
 - Install dependencies by running `npm`.
 - If you don't have an AWS account, [create one](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 - Install the [AWS CLI](https://aws.amazon.com/cli/).
-  - Verify that the AWS CLI is installed by running `aws` in a terminal window.
 - Set up [AWS Shared Credential File](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
   - Your `~/.aws/credentials` (`%UserProfile%\.aws\credentials` on Windows) should look like the following:
     ```
@@ -40,17 +39,17 @@ This is a blank project for CDK deployment for [RS - AWS Clould Developer](https
 ### Deploy infrastructure
 From the root of this directory.
 
-- Run: `npm cdk deploy:infa`
+- Run: `npm run deploy`
 - This command:
   - Creates AWS infrastructure using [AWS Cloud Development Kit](https://aws.amazon.com/cdk/).
   - Creates resources to be used in the frontend, specifally S3 bucket and CloudFront.
 
 ### Deploy Files to S2
 
-- Run: `npm deply:s2`
+- Run: `npm deply:s3`
 - This command copies website files from the `dist` diretory to the AWS S2
 - This command creates invalidation
 
 ### Clean up
 
-The Cloudformation stack can be deleted by running: `npm cdk destroy`
+The Cloudformation stack can be deleted by running: `npx cdk destroy`

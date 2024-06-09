@@ -8,7 +8,7 @@
     "build": "tsc -p tsconfig.json && tsc --build scripts",
     "watch": "tsc -w",
     "test": "jest",
-    "deploy:infa": "npx cdk deploy --outputs-file ./scripts/outputs.json && npx ts-node ./scripts/setupDotEnv.ts",
+    "deploy": "npx cdk deploy --outputs-file ./scripts/outputs.json && npx ts-node ./scripts/setupDotEnv.ts",
     "deploy:s3": "cd scripts && npx ts-node ./deployS3.ts --directory ../../dist --invalidate true"
   },
   "devDependencies": {
