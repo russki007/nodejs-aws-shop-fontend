@@ -2,7 +2,7 @@
 
 
 - **CloudFront URL**: https://dgtp5jga6qb5w.cloudfront.net/
-- **S3 Website URL**: https://websitebucket-984942.s3.ap-southeast-2.amazonaws.com/
+- **S3 Website URL**: https://websitebucket-592119.s3.ap-southeast-2.amazonaws.com
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
