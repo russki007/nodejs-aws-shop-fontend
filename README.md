@@ -1,5 +1,9 @@
 # React-shop-cloudfront
 
+
+- **CloudFront URL**: https://dgtp5jga6qb5w.cloudfront.net/
+- **S3 Website URL**: https://websitebucket-984942.s3.ap-southeast-2.amazonaws.com/
+
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
@@ -36,3 +40,6 @@ Runs tests in console, in browser or with coverage.
 ### `lint`, `prettier`
 
 Runs linting and formatting for all files in `src` folder.
+
+# Infrastructure
+Scripts and file related to the deployment of the infrastructure are located in the 'infrastructure' directory.
