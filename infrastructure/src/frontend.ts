@@ -1,7 +1,7 @@
 import { Construct } from 'constructs';
 import { RemovalPolicy, Stack } from 'aws-cdk-lib';
 import { BlockPublicAccess, Bucket, BucketEncryption, IBucket } from 'aws-cdk-lib/aws-s3';
-import { CloudFrontWebDistribution, OriginAccessIdentity } from 'aws-cdk-lib/aws-cloudfront';
+import { CloudFrontWebDistribution, OriginAccessIdentity, ViewerProtocolPolicy } from 'aws-cdk-lib/aws-cloudfront';
 
 export interface FrontendProps {
   readonly accessLogBucket?: IBucket;
@@ -19,20 +19,21 @@ export class Frontend extends Construct {
     const originAccessIdentity = new OriginAccessIdentity(this, 'OriginAccessIdentity');
 
     const distribution = new CloudFrontWebDistribution(this, 'Distribution', {
-      // define origin for our distribution
       originConfigs: [
         {
           s3OriginSource: {
             s3BucketSource: props.assetsBucket,
-            originAccessIdentity,
+            originAccessIdentity        
           },
           behaviors: [
             {
               isDefaultBehavior: true,
+              viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS
             },
           ],
         },
       ],
+      defaultRootObject: 'index.html',
       errorConfigurations: [
         {
           errorCode: 404,
@@ -54,7 +55,6 @@ export class Frontend extends Construct {
     });
 
     this.cloudFrontWebDistribution = distribution;
-
     props.assetsBucket.grantRead(originAccessIdentity);
   }
 }
