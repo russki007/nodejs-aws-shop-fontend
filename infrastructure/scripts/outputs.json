@@ -1,0 +1,9 @@
+{
+  "russki007-WebAppStack": {
+    "WebsiteUrl": "https://dgtp5jga6qb5w.cloudfront.net",
+    "FilesBucket": "websitebucket-592119",
+    "Region": "ap-southeast-2",
+    "DistributionId": "EHAMIU38D3VJ4",
+    "StackName": "russki007-WebAppStack"
+  }
+}
